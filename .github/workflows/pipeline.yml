@@ -30,3 +30,23 @@ jobs:
     - name: Display my students username
       run: echo 'mdzhut200'
 
+  execute-ui-test:
+    needs: build-and-unit-test
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout the code
+      uses: actions/checkout@v4
+    - name: Use Node.js 20x
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20.x
+        cache: 'npm'
+    - name: Install npm dependencies
+      run: npm install
+    - name: Install Playwright browsers
+      run:  npx playwright install
+    # - name: Start the application
+    #   run:  npm run start
+    - name: Execute the UI tests
+      run:  npm run test:ui
+
