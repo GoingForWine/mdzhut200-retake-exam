@@ -27,6 +27,6 @@ jobs:
       run: npm run start
     - name: Start unit tests
       run: npm test:unit
-    - name: Display students username
+    - name: Display my students username
       run: echo 'mdzhut200'
 
