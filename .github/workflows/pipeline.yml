@@ -26,7 +26,7 @@ jobs:
     # - name: Initiate app
     #   run: npm run start
     - name: Start unit tests
-      run: npm test:unit
+      run: npm run test:unit
     - name: Display my students username
       run: echo 'mdzhut200'
 
